@@ -64,7 +64,6 @@ public class PaintingsController {
         return "redirect:/home";
     }
 
-    // /paintings/favourites/{id}
     @PostMapping("/favourites/{id}")
     public String makeFavouritePainting(@PathVariable UUID id, HttpSession session) {
 
@@ -76,7 +75,7 @@ public class PaintingsController {
         return "redirect:/home";
     }
 
-    // '/paintings/favourites/' + {id}
+
     @DeleteMapping("/favourites/{id}")
     public String deleteFavouritePainting(@PathVariable UUID id) {
 
