@@ -79,8 +79,7 @@ public class IndexController {
 
         User user = userService.loginUser(loginRequest);
 
-        // ВАЖНО!!!
-        // Когато се логвам - активирам сесия и поставям в тази сесия ID-то на потребителя!!!!
+
         session.setAttribute("user_id", user.getId());
 
         return "redirect:/home";
@@ -105,8 +104,6 @@ public class IndexController {
     @GetMapping("/logout")
     public String getLogoutPage(HttpSession session) {
 
-        // ВАЖНО:
-        // Прекратяваме сесията и редиректваме към индекс или логин
 
         session.invalidate();
         return "redirect:/";
