@@ -50,8 +50,6 @@ public class UserService {
 
         User user = optionalUser.get();
 
-        // user password = encoded password
-        // loginRequest password = raw password
         if (!passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
             throw new RuntimeException("Incorrect username or password.");
         }
